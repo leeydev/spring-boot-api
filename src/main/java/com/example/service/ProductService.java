@@ -8,10 +8,20 @@ import java.util.List;
 public class ProductService {
     private final ProductRepository repository;
     
-    public ProductService(ProductRepository repository) {
-        this.repository = repository;
-    }
+    public ProductService(ProductRepository repository) { this.repository = repository; }
     
     public List<Product> getAll() { return repository.findAll(); }
+    
+    public Product getById(Long id) { return repository.findById(id).orElseThrow(() -> new RuntimeException("Not found")); }
+    
     public Product save(Product product) { return repository.save(product); }
+    
+    public Product update(Long id, Product product) {
+        Product existing = getById(id);
+        existing.setName(product.getName());
+        existing.setPrice(product.getPrice());
+        return repository.save(existing);
+    }
+    
+    public void delete(Long id) { repository.deleteById(id); }
 }

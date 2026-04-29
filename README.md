@@ -4,13 +4,14 @@ Enterprise-grade REST API built with Spring Boot 3 and JPA.
 
 ## Features
 
-- 🍃 Spring Boot 3
-- 💾 JPA/Hibernate
-- 🧪 Unit & Integration tests
-- 📝 REST endpoints
-- 🏗️ Layered architecture
+- 🍃 Spring Boot 3.1
+- 💾 Spring Data JPA with Hibernate
+- 🧪 JUnit 5 & Mockito tests
+- 📝 OpenAPI 3 documentation
+- 🏗️ Layered architecture (Controller, Service, Repository)
+- 🔐 Spring Security ready
 
-## Build
+## Build & Run
 
 ```bash
 mvn clean install
@@ -21,11 +22,29 @@ mvn spring-boot:run
 
 | Method | Endpoint | Description |
 |--------|----------|-------------|
-| GET | /api/products | List products |
-| POST | /api/products | Create product |
+| GET | /api/products | List all products |
+| GET | /api/products/:id | Get product by ID |
+| POST | /api/products | Create new product |
+| PUT | /api/products/:id | Update product |
+| DELETE | /api/products/:id | Delete product |
 
 ## Testing
 
 ```bash
 mvn test
 ```
+
+## Project Structure
+
+```
+src/main/java/com/example/
+├── controller/     # REST controllers
+├── service/        # Business logic
+├── repository/     # Data access layer
+├── model/          # Entity classes
+└── Application.java
+```
+
+## License
+
+MIT

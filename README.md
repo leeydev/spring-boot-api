@@ -1,5 +1,8 @@
 # Spring Boot API
 
+![License](https://img.shields.io/badge/license-MIT-blue.svg) ![Version](https://img.shields.io/badge/version-1.0.0-green.svg)
+
+
 Enterprise-grade REST API built with Spring Boot 3 and JPA.
 
 ## Features
